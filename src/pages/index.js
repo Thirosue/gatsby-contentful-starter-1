@@ -38,7 +38,6 @@ const Product = ({ node }) => (
 class IndexPage extends React.Component {
   render() {
     const usProductEdges = this.props.data.us.edges
-    const deProductEdges = this.props.data.german.edges
     return (
       <Layout>
         <div style={{ marginBottom: rhythm(2) }}>
@@ -59,14 +58,8 @@ class IndexPage extends React.Component {
             an additional field added, <code>node_locale</code> so you can
             select for nodes from a single locale
           </p>
-          <h3>en-US</h3>
+          <h3>en</h3>
           {usProductEdges.map(({ node }, i) => (
-            <Product node={node} key={node.id} />
-          ))}
-          <br />
-          <br />
-          <h3>de</h3>
-          {deProductEdges.map(({ node }, i) => (
             <Product node={node} key={node.id} />
           ))}
         </div>
@@ -82,21 +75,6 @@ export default IndexPage
 export const pageQuery = graphql`
   query {
     us: allContentfulProduct(filter: { node_locale: { eq: "en-US" } }) {
-      edges {
-        node {
-          id
-          productName {
-            productName
-          }
-          image {
-            fixed(width: 75) {
-              ...GatsbyContentfulFixed
-            }
-          }
-        }
-      }
-    }
-    german: allContentfulProduct(filter: { node_locale: { eq: "de" } }) {
       edges {
         node {
           id
