@@ -1,6 +1,6 @@
 # Using Contentful
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/soussune/gatsby-contentful-starter">
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/Thirosue/gatsby-contentful-starter-1">
   <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify">
 </a>
 
